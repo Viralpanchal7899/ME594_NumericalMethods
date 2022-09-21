@@ -1,0 +1,15 @@
+% Drive for Q3
+
+%Test case 1 | R = 0.40625
+fprintf('when R = 0.40625');
+[chopped_number_1,rounded_number_1] = binfrac(0.40625)
+
+%Test case 2 | R = 0.7
+fprintf('when R = 0.7');
+[chopped_number_2,rounded_number_2] = binfrac(0.7)
+
+%Test case 1 | R = 0.12109
+fprintf('when R = 0.40625');
+case_3 = '0.12109375'
+[chopped_number_3,rounded_number_3] = binfrac(0.12109375)
+
