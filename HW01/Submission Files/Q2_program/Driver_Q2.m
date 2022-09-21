@@ -1,4 +1,5 @@
 %% Driver for Q2
+% function file name - intTObina.m
 
 % Test case 1 | d = 81
 fprintf('Binary when d = 81 \n');

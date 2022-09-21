@@ -1,3 +1,5 @@
+% Binary fractions
+% Q3
 function [chopped,rounded] = binfrac(R)
 format long
 i = 1;

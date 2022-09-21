@@ -1,3 +1,5 @@
+% Function to convert integer to binary 
+% Q2
 function b = intTObina(d)
 
 b = [];
@@ -9,7 +11,6 @@ while d > 0
     else
         fprintf('Error')
     end
-    
     q = floor(d/2);
     d = q;
 end

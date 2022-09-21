@@ -1,4 +1,5 @@
-%% Drive for Q3
+%% Driver for Q3
+% function file name - binfrac.m
 
 %Test case 1 | R = 0.40625
 fprintf('when R = 0.40625 \n');
