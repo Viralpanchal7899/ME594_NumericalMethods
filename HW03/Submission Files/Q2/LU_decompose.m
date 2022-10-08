@@ -1,4 +1,5 @@
-% Function for LU decomposition
+% Function for LU decomposition 
+% No pivoting in this case 
 
 function [L,U]  = LU_decompose(A)
 

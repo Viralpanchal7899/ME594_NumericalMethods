@@ -9,11 +9,11 @@ if (p ~= q)
     return 
 end
 
-A_aug = [A eye(p)];
+A_aug = [A eye(p)];        % Augmented matrix
 
 for i = 1:p-1
     [max_value, r] = max(abs(A_aug(i:p,i)));
-    if (r>1)
+    if (r>1)                            % pivoting condition
         temp_row = A_aug(i,:);
         A_aug(i,:) = A_aug(i+r-1,:);
         A_aug(i+r-1,:) = temp_row;
