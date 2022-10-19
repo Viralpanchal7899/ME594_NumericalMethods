@@ -1,3 +1,4 @@
+% Function to jacobian 
 function w = Jacobian(x)
 
 a = x(1);

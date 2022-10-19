@@ -1,4 +1,9 @@
+% Function for newton's method
 function [P,iter,rel_error,est_error] = Newton(f,Jacobian,P,eps,max_iter)
+
+% P: initial guess during input and approximation to solution during output
+% f: calling given equations
+% Jacobian: calling output of jacobian.m
 
 n=length(P);
 y=feval(f,P);

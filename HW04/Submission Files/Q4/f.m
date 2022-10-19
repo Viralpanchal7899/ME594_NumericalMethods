@@ -1,3 +1,4 @@
+% Given equations for the system
 function z = f(x)
 
 a = x(1);
