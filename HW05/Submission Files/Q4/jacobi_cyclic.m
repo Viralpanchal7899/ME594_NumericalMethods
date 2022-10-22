@@ -1,4 +1,7 @@
+% Function to determine eigen pairs using Jacobi method.
 function [V,D,num_sweeps] = jacobi_cyclic(A,eps,max_sweeps)
+ %Input - Matrix A (4*4) 
+ %Output - V-->Eigen vectors | D-->Diagonal matrix with eigen values
 
 D=A;
 [n,n] = size(A);

@@ -1,3 +1,4 @@
+% Functions to determine the givens parameters (c,s)
 function [c,s] = givens_params(x_i,x_j)
 
 if (x_j==0)

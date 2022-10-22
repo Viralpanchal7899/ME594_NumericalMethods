@@ -1,3 +1,4 @@
+% Function to perform QR iteration and determine the eigen values
 function [eig_vals] = qr_iter(A)
 
 for i=1:40

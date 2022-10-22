@@ -1,3 +1,4 @@
+% Function to decompose A using Givens method
 function [Q,R] = givens_qr(A)
 
 [n,n] = size(A);

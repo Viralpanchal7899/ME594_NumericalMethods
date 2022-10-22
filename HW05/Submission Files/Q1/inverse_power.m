@@ -1,3 +1,5 @@
+% Function to determine smallest eigen value and its eigen vector using
+% inverse power method. 
 function [lambda_n,v_n,n_iter] = inverse_power(A,x0,tol,max_iter)
 
 [n,n] = size(A);

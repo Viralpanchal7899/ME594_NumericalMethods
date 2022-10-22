@@ -1,4 +1,7 @@
 % Q2 driver
+close all
+clear all
+clc
 
 A = [2.5 -2 2.5 0.5
     0.5 5 -2.5 -0.5

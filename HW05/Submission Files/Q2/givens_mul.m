@@ -1,3 +1,4 @@
+% Function to make a givens multiple matrix
 function A = givens_mul(A,i,j,c,s)
 
 a = A(i,:);
