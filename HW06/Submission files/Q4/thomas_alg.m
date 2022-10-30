@@ -1,3 +1,4 @@
+% Function to implement thomas algorithm
 function x = thomas_alg(a,b,c,rhs)
 
 n = length(rhs);

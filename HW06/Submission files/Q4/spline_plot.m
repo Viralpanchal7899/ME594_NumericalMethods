@@ -1,3 +1,4 @@
+% generalised function to plot splines 
 function spline_plot(t,y)
 
 n = length(t) -1;
@@ -35,6 +36,8 @@ plot(t,y,'*-');
 xlabel("t");
 ylabel("y");
 hold on
+grid on
+axis padded
 
 for i=1:n
     tt = u*(t(i+1) - (t(i))) + t(i);
