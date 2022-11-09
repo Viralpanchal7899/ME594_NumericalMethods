@@ -1,3 +1,4 @@
+% Function to get the force
 function F = Force(t,v)
 
 n = length(t);

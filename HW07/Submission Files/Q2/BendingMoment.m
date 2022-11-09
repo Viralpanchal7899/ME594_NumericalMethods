@@ -1,3 +1,5 @@
+% Function to compute the bending moment
+
 function M = BendingMoment(x,y)
 
 n = length(x);
@@ -15,5 +17,7 @@ for i = 2:n-1
 end
 
 plot(x,M)
+title('M v/s x')
 xlabel('x(inch)')
 ylabel('M(lbf*ft)')
+grid on

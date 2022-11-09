@@ -1,3 +1,4 @@
+% Function to get the error and plot it
 function ef = ErrorFun(x)
 
 dt = 0.2;
@@ -15,5 +16,7 @@ end
 
 ef = ef.*2/sqrt(pi);
 plot(t,ef)
+title('error v/s x')
 xlabel('x')
 ylabel('erf(x)')
+grid on
