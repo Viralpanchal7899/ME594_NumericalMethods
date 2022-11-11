@@ -1,0 +1,7 @@
+% Explicit Euler function
+
+function f = Explicit_euler(x_k,y_k,h)
+
+f = (1-2*x_k*h)*y_k;
+
+end
