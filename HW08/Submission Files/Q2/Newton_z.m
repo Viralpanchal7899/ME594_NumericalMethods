@@ -5,7 +5,7 @@ z = y_k;
 max_1 = 1000;
 
 for j = 1:max_1
-    p = z-feval('G_NS',z,h,y_k,x_k_p1)/feval('GP_NS',z,x_k_p1,h);
+    p = z-feval('G_NS',z,h,y_k,x_k_p1)/feval('GZ_NS',z,x_k_p1,h);
     
     error = abs(p-z);
     rel_error = 2*error/(abs(p)+abs(z));

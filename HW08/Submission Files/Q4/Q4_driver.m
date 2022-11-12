@@ -20,4 +20,5 @@ plot(x,y,'o',x_2,y_2)
 xlabel('t(s)')
 ylabel('y(millimoles/liter)')
 axis padded
+grid on
 legend('RK4','Exact');

@@ -1,9 +1,12 @@
-%Driver Q3
+% Driver Q3
+% This driver includes the program for both the Trapezoid and Euler method.
+% The first output figure is for the trapezoid method followed by the
+% modifiied euler method. 
 clear all
 close all
 clc
-% For trapezoid method
 
+% For trapezoid method
 x_0 = 1;
 y_0 = 1;
 x_n = 5;
@@ -39,9 +42,14 @@ legend('h=0.8','h=0.4','h=0.2','Exact')
 
 figure
 
-% For Euler method
 
-x_0 =  
+% For Euler method
+% Need to redefine the initial values to overide magnitudes from previous
+% method
+x_0 = 1;
+y_0 = 1;
+x_n = 5;
+
 for i = 0:2
     
     h = 0.8/2^i;
@@ -59,10 +67,10 @@ for i = 0:2
     hold on 
 end
 
-y_exact = (1,n+1);
+y_exact = zeros(1,n+1);
 y_exact(1) = y_0;
 for k = 2:n+1
-    y_exact(k) = 2-exp(1-x(k).^2)/4;
+    y_exact(k) = 2-exp((1-x(k).^2)/4);
 end
 
 plot(x,y_exact)

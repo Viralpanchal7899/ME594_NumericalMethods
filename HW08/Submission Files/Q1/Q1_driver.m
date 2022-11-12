@@ -1,5 +1,5 @@
 % Q1 driver
-% This driver runs both Explicit and Implcit Euler method outputs pplot for
+% This driver runs both Explicit and Implcit Euler method outputs plot for
 % both individually.
 clear all
 close all
@@ -40,7 +40,7 @@ axis padded
 grid on
 xlabel('x')
 ylabel('y')
-legend('h = 0.4','h =0.2','h=0.1','h=0.5','exact')
+legend('h = 0.4','h =0.2','h=0.1','h=0.5','Exact')
 
 
 figure 
@@ -82,6 +82,6 @@ axis padded
 grid on
 xlabel('x')
 ylabel('y')
-legend('h = 0.4','h =0.2','h=0.1','h=0.5','exact')
+legend('h = 0.4','h =0.2','h=0.1','h=0.5','Exact')
 
 

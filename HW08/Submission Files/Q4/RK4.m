@@ -1,3 +1,4 @@
+% Runge-Kutta function
 function [x,y] = RK4(ode,a,b,h,y_ini)
 
 
