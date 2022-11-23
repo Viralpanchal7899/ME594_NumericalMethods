@@ -13,7 +13,7 @@ data = readtable('test.csv');
 plot(data.SampleTimeFine, data.dv_1_,'*')
 grid on
 axis padded
-legend('raw data','y = Ax+B')
+legend('raw data')
 
 % script for least square line equation 
 % y=AX+B;
