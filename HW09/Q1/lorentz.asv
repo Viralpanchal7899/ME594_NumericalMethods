@@ -1,0 +1,7 @@
+function dVdt = lorentz(x,y,z)
+
+r = 21;
+b = 8/3;
+sigma = 10;
+
+dVdt(1) = sigma*
