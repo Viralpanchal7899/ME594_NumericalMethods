@@ -1,3 +1,5 @@
+% Function to imple Runge-Kutta method
+
 function [x,y,z] = RK4(ODE,a,b,h,x0,y0,z0)
 
 n = (b-a)/h;
@@ -15,7 +17,6 @@ z(1) = z0;
 
 for i = 1:n
     t(i+1) = t(i) + h;
-    
     [K(:,1)] = feval(ODE,x(i),y(i),z(i));
     [K(:,2)] = feval(ODE,x(i)+0.5*K(1,1)*h,y(i)+0.5*K(2,1)*h,z(i)+0.5*K(3,1)*h);
     [K(:,3)] = feval(ODE,x(i)+0.5*K(1,2)*h,y(i)+0.5*K(2,2)*h,z(i)+0.5*K(3,2)*h);

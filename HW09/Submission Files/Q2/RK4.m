@@ -1,3 +1,4 @@
+% Runge Kutta function
 function [x,f2] = RK4(ODE,a,b,h,f1_0,f2_0,f3_0)
 
 n = (b-a)/h;

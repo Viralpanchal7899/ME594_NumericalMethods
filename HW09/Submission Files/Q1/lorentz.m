@@ -1,3 +1,4 @@
+% Function to implement Lorentz method
 function dVdt = lorentz(x,y,z)
 
 r = 21;
