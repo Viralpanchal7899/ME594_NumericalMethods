@@ -16,7 +16,7 @@ axis padded
 legend('raw data')
 
 % Script for least squares parabolic equation
-% Y = Ax^2 + Bx + C;
+% Y = Ax^2 + Bx + C;v
 
 x = data.SampleTimeFine;
 y = data.dv_1_;
@@ -47,5 +47,6 @@ C = X_inv * RHS;
 
 y_f = (C(1))*(x.^2) + C(2)*x + C(3);
 
+MSE = error(y_f,y,length(y_f))
 hold on 
 plot(x,y_f)
