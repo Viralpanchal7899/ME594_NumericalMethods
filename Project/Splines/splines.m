@@ -4,14 +4,14 @@ close all
 clear all
 clc
 
-data = readtable('test_4.csv','NumHeaderLines',10);
+data = readtable('test.csv');
 % data = readtable('')
 % Raw plot
 % solving for velocity measured in x direction wrt time
 
 plot(data.SampleTimeFine, data.dv_1_,'o')
 hold on
-plot(data.SampleTimeFine, data.dv_1_,'r','LineWidth',2)
+plot(data.SampleTimeFine, data.dv_1_,'r','LineWidth',1)
 grid on
 axis padded
 legend('raw data')
@@ -80,5 +80,5 @@ for i = 1:X+1
 end
 
 hold on 
-plot(data.SampleTimeFine,P_i(2:X+1,1),'k','LineWidth',2)
+plot(data.SampleTimeFine,P_i(2:X+1,1),'k','LineWidth',1)
 
