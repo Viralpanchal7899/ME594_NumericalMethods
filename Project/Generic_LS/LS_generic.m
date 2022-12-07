@@ -4,6 +4,8 @@ close all
 clear all
 clc
 
+tic
+
 % Importing the data
 data = readtable('test.csv');
 X = data.SampleTimeFine;
@@ -68,4 +70,5 @@ legend('Raw Plot','Polynomial Curve')
 axis padded
 grid on 
 
+toc
     
