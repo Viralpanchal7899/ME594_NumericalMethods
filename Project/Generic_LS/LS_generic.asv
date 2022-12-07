@@ -1,3 +1,6 @@
+% Plotting the curve with increasing order of the polynomial equation
+% irrespective of the MSE.
+
 % Generic least squares
 close all
 clear all
@@ -12,13 +15,13 @@ Y = data.dv_1_;
 plot(X,Y)
 
 % Starting MSE
-mse = 1;
-MSE_arr(1,1) = 1;
+MSE_arr = zeros();
 
 % defining the starting order of the polynomial
 O = 1;
+max_order = 20;
 
-while mse>1e-2
+while O <= max_order
     
     % Getting a matrix for all x values
     x = zeros();
@@ -52,19 +55,31 @@ while mse>1e-2
         end
         Y_LS(i,1) = y_temp;
     end
-
+    
+    subplot(round(max_order/5),round(max_order/4),O)
+    plot(X,Y)
+    hold on
+    plot(X,Y_LS,'g',LineWidth=2)
+    title('Order = ',O)
+    sgtitle('Blue - Raw plot | Green - LS plot')
+    axis padded
+    grid on
+    
     % Computing the MSE and incrementing the order
     mse = error(Y_LS,Y,length(Y));
     MSE_arr(O+1,1) = mse;
     O = O+1;
 end
 
-fprintf("Final MSE = ", MSE_arr(length(MSE_array),1))
+% Plotting the error as the order is increasing
+plot(1:1:20,MSE(1:20,1))
+
+% fprintf("Final MSE = %f ", MSE_arr(length(MSE_array),1));
 % Plotting the curve
-hold on 
-plot(X,Y_LS,LineWidth=3)
-legend('Raw Plot','Polynomial Curve')
-axis padded
-grid on 
+% hold on 
+% plot(X,Y_LS,LineWidth=3)
+% legend('Raw Plot','Polynomial Curve')
+% axis padded
+% grid on 
 
     
