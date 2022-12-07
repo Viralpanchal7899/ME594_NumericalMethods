@@ -1,0 +1,1 @@
+Using lagrange gives better performance and converges quicker compared to the spline method.
