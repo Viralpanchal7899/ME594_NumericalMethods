@@ -1,8 +1,8 @@
-% clear all
-% close all
-% clc
+clear all
+close all
+clc
 
-% data = readtable('test.csv');
+data = readtable('test.csv');
 
 % Defining the abscissa and ordinate
 % X = data.SampleTimeFine;
@@ -72,27 +72,8 @@
 
 num = ones();
 den = ones();
+x = [1;2.2;3.4;4.8;6;7];
+y = [2;2.8;3;3.2;4;5];
 
-data = readtable('test_3.csv');
-
-x = data.SampleTimeFine;
-y = data.dv_1_;
-
-% x = [1;2.2;3.4;4.8;6;7];
-% y = [2;2.8;3;3.2;4;5];
-L = zeros();
-% X = 5.4;
-X = 931761880;
 for i = 1:length(x)
-    num(i,1) = 1;
-    den(i,1) = 1;
-    for j = 1:length(x)
-        if i~=j
-            num(i,1) = num(i,1)*(X-x(j,1));
-            den(i,1) = den(i,1)*(x(i,1)-x(j,1));
-        end
-    end
-    L(i,1) = y(i,1)*(num(i,1)/den(i,1));
-end
-
-Y_l = sum(L(:,1))
+    for j = 
