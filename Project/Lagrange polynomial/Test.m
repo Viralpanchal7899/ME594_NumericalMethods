@@ -1,98 +1,82 @@
-% clear all
-% close all
-% clc
-
-% data = readtable('test.csv');
-
-% Defining the abscissa and ordinate
-% X = data.SampleTimeFine;
-% Y = data.dv_1_;
-
-% Number of samples
-% N = length(data.SampleTimeFine);
-% Number of intermediate points between x0 and x1
-% n = 10;
-% x_l = linspace(931761852,931778519,10);
-
-% % for iter = 1:length(x_l)
-%     y_l = lagrange(X,Y,N,931761852)
-%     hold on 
-%     plot(x_l(iter),y_l,'o')
-% % end
-% 
-% 
-% 
-% % Raw plot
-% plot(X,Y,'o-')
-% figure
-
-% i = 2;
-% % for i=1:10
-%     xl_range = linspace(X(i,1),X(i+1,1),n);
-%     yl_range = zeros();
-%     for j=1:length(xl_range)
-%         x_l = xl_range(j);
-%         yl_range(j,1) = lagrange(X,Y,N,x_l);
-%     end
-% %   yl_range(i,1) = y_l;
-% %     hold on
-% %     plot(x(i,1),y(i,1))
-%     hold on 
-%     plot(xl_range(1,2:n-1),yl_range(2:n-1,1))
-% end
-
-
-        
-        
-%         
-%         
-% xp_range = linspace(x(2,1),x(3,1),20);
-% % yp = 0;
-% yp_range = zeros();
-% 
-% tic
-% for m = 1:length(xp_range)
-%     xp = xp_range(m);
-%     yp = 0;
-%     
-%     yp_range(m,1) = yp;
-% end
-% toc
-% 
-% 
-% 
-% % Plotting update samples after finding intermediate values using largrange
-% % interpolation
-% plot(xp_range,yp_range)
-% axis padded
-% grid on 
-% 
-
+clear all
+close all
+clc
 % IMPLEMENTING LAGRANGE SELF
+% In this script, Sample time is considered in X and only 10 random samples
+% from the whole data set is taken keeping the first and last same from the
+% parent dataset.
 
-num = ones();
-den = ones();
-
+% Importing the data
 data = readtable('test_3.csv');
+x_og = data.SampleTimeFine;
+y_og = data.dv_1_;
 
-x = data.SampleTimeFine;
-y = data.dv_1_;
+% N --> Number of samples from the original "og" dataset.
+N = 10;
 
-% x = [1;2.2;3.4;4.8;6;7];
-% y = [2;2.8;3;3.2;4;5];
-L = zeros();
-% X = 5.4;
-X = 931761880;
-for i = 1:length(x)
-    num(i,1) = 1;
-    den(i,1) = 1;
-    for j = 1:length(x)
-        if i~=j
-            num(i,1) = num(i,1)*(X-x(j,1));
-            den(i,1) = den(i,1)*(x(i,1)-x(j,1));
+
+plot(x_og,y_og,'o');
+
+% Lagrange with linspace
+Y_l = zeros();
+for k = 1:length(x_og)-1
+    x = linspace(x_og(k),x_og(k+1),N);
+    num = ones();
+    den = ones();
+    X = x(k);
+    L = zeros();
+    for i = 1:length(x)
+        num(i,1) = 1;
+        den(i,1) = 1;
+        for j = 1:length(x)
+            if i~=j
+                num(i,1) = num(i,1)*(X-x(j,1));
+                den(i,1) = den(i,1)*(x(i,1)-x(j,1));
+            end
         end
+        L(i,1) = y(i,1)*(num(i,1)/den(i,1));
     end
-    L(i,1) = y(i,1)*(num(i,1)/den(i,1));
+Y_l(k,1) = sum(L(:,1));
+hold on 
+plot(x,Y_l)
 end
+legend('raw data','Lagrange Method')
 
-Y_l = sum(L(:,1))
+% % Defining first and last, (x,y) dataset for this particular simulation.
+% x(1,1) = x_og(1,1);
+% x(N,1) = x_og(length(x_og),1);
+% y(1,1) = y_og(1,1);
+% y(N,1) = y_og(length(y_og),1);
+% 
+% % Randomly picking remaining readings from the whole set.
+% iter = sort(randi([2,length(x_og)-1],1,N-2));
+% for i = 1:(length(iter))
+%     x(i+1,1) = x_og(iter(i),1);
+%     y(i+1,1) = y_og(iter(i),1);
+% end
+
+% Y_l = zeros();
+% % Implementing Lagrange 
+% for k = 1:length(x)
+%     num = ones();
+%     den = ones();
+%     X = x(k);
+%     for i = 1:length(x)
+%         num(i,1) = 1;
+%         den(i,1) = 1;
+%         for j = 1:length(x)
+%             if i~=j
+%                 num(i,1) = num(i,1)*(X-x(j,1));
+%                 den(i,1) = den(i,1)*(x(i,1)-x(j,1));
+%             end
+%         end
+%         L(i,1) = y(i,1)*(num(i,1)/den(i,1));
+%     end
+% Y_l(k,1) = sum(L(:,1));
+% end
+
+% Plotting all the data
+% plot(x_og,y_og,'o');
+% hold on 
+% plot(x,Y_l)
+% legend('raw data','Lagrange Method')
