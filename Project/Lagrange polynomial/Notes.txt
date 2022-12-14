@@ -2,4 +2,4 @@
 
 1) Increasing the number of samples reduces makes it difficult to converge. Sometimes the program may converge but sometime it may take many re-runs since the result would reduce down to NaN.
 
-2) 
+2) NEED TO ADD LINSPACE BETWEEN X_i  and X_i+1
