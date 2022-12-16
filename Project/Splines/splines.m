@@ -1,5 +1,4 @@
 % Program for curve fitting using splines
-
 close all
 clear all
 clc

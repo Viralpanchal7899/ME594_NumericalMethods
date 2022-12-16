@@ -5,7 +5,6 @@ close all
 clear all
 clc
 
-tic 
 % Importing the data
 data = readtable('test.csv');
 
@@ -35,12 +34,10 @@ end
 % matrix
 RHS = [sigma_xy ; sigma_y];
 X = [sigma_x2 sigma_x; sigma_x length(x)];
-C = X\RHS;
+X_inv = inv(X);
+C = X_inv * RHS;
 y_f = C(1)*x + C(2);
 
 hold on
-plot(x,y_f,'LineWidth',2)
-grid on
-axis padded
-legend('Raw data','LS method')
-toc
+plot(x,y_f,)
+
