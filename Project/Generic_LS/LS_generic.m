@@ -6,6 +6,7 @@ close all
 clear all
 clc
 
+
 % Importing the data
 data = readtable('test.csv');
 X = data.SampleTimeFine;
@@ -20,7 +21,7 @@ MSE_arr = zeros();
 % defining the starting order of the polynomial
 O = 1;
 max_order = 20;
-
+tic
 while O <= max_order
     
     % Getting a matrix for all x values
@@ -82,7 +83,7 @@ ylabel('MSE')
 title('MSE as the order of polynomial increases')
 grid on 
 axis padded
-
+toc
 
 
     
