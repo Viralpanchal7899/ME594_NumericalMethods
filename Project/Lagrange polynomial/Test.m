@@ -12,10 +12,10 @@ x_og = data.SampleTimeFine;
 y_og = data.dv_1_;
 
 % N --> Number of samples from the original "og" dataset.
-N = 10;
+N = 5;
 
 
-plot(x_og,y_og,'o');
+plot(x_og,y_og,'*');
 
 % Lagrange with linspace
 Y_l = zeros();
@@ -41,6 +41,9 @@ hold on
 plot(x,Y_l)
 end
 legend('raw data','Lagrange Method')
+% legend('original data')
+grid on 
+axis padded
 
 % % Defining first and last, (x,y) dataset for this particular simulation.
 % x(1,1) = x_og(1,1);
